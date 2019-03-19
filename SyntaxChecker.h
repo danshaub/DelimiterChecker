@@ -16,6 +16,7 @@ class SyntaxChecker{
         void setFilePath(string f);
         bool fileIsOpen();
         bool checkDelimeters() throw (DelimException);
+        string getFileName();
 
     private:
         void setFileName();

@@ -11,6 +11,9 @@ SyntaxChecker::SyntaxChecker(string f){
 }
 
 void SyntaxChecker::setFilePath(string f){
+    if(fileIsOpen()){
+        fileStream.close();
+    }
     filePath = f;
     fileStream.open(f);
     setFileName();
@@ -23,6 +26,10 @@ void SyntaxChecker::setFileName(){
 
 bool SyntaxChecker::fileIsOpen(){
     return fileStream.is_open();
+}
+
+string SyntaxChecker::getFileName(){
+    return fileName;
 }
 
 bool SyntaxChecker::checkDelimeters() throw (DelimException){
@@ -92,7 +99,6 @@ bool SyntaxChecker::checkDelimeters() throw (DelimException){
 
         lineNumber++;
     }
-    cout << delimeterStack->getSize() << endl;
     if(!delimeterStack->isEmpty()){
         char checkOpen = delimeterStack->pop();
         char oppositeDelim = '\0';
