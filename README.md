@@ -25,7 +25,7 @@
          * For example the string literal: "this is an incorrect delimiter sequence: [})" 
           * Or the character literal: ')'
       * Additionally, becuase the language being checked is ambiguous, it is impossible to know what comment style is being used, meaning that comments will be checked for correct delimiters and quotation.
-      * Quotes are kept track of using a boolean flag that is thrown off by an unclosed quote
+      * Quotes are kept track of using a boolean flag that is thrown off by an unclosed quotation character (see SyntaxChecker.cpp lines 74-77)
 
 4. References used to complete the assignment
     * http://www.cplusplus.com/reference/string/string/find/
