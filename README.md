@@ -20,7 +20,8 @@
 
 3. Description of any known compile/runtime errors, or bugs.
     * RUNTIME: If there is a single apostrophe (i.e. within comments using the word don't) it will give inaccurate readings
-      * This is because the syntax checker accounts for single and double quotes that would allow for incorrect delimiters.
+      * This is because the syntax checker accounts for string and character literals that would allow for incorrect delimiters.
+         * Such as "this is an incorrect delimiter sequence [})" or simply ')'
       * Additionally, becuase the language being checked is ambiguous, it is impossible to know what comment style is being used, meaning that comments will be checked for correct delimiters and quotation.
       * Quotes are kept track of using a boolean flag that is thrown off by an unclosed quote
 
